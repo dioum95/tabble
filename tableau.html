@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>table en js</title>
+</head>
+<body>
+    <form method="post" action="">
+        <input type="button" value="Generate a table." onclick="generate_table()">
+    </form>
+
+    <h1>Utilisateurs</h1>
+
+    <script>  
+    function generate_table(){  
+            
+            const user = [
+                    {nom: "Dioum", prenom: "Cheikh", email: "dioum95@gmail.com", password: 1092830},
+                    {nom: "Diop", prenom: "Moustapha", email: "diop90@gmail.com", password: 1102850},
+                    {nom: "Fall", prenom: "Sophie", email: "fall91@gmail.com", password: 1112840},
+                    {nom: "Seck", prenom: "Aida", email: "seck92@gmail.com", password: 1122820},
+                    {nom: "Amar", prenom: "Nafi", email: "amar93@gmail.com", password: 1132810},
+                ];
+
+            // Création d'un référence du body
+            let body = document.getElementsByTagName("body");
+
+            // creation d'un élément <table> et un élélment <tbody>
+            let tbl = document.createElement("table");
+            let tblBody = document.createElement("tbody");
+            let tblHead = document.createElement("thead")
+
+                    for (let element of user) {
+                        console.log(element);
+
+                        let row = document.createElement("tr");
+
+                        for(let i =0; i<1; i++){
+                            let cell1 = document.createElement("td");
+                            let cell2 = document.createElement("td");
+                            let cell3 = document.createElement("td");
+                            let cell4 = document.createElement("td");
+;
+                            let cell1Text = document.createTextNode(element.nom);
+                            let cell2Text = document.createTextNode(element.prenom);
+                            let cell3Text = document.createTextNode(element.email);
+                            let cell4Text = document.createTextNode(".......");
+
+                            cell1.appendChild(cell1Text);
+                            cell2.appendChild(cell2Text);
+                            cell3.appendChild(cell3Text);
+                            cell4.appendChild(cell4Text);
+                            row.appendChild(cell1);
+                            row.appendChild(cell2);
+                            row.appendChild(cell3);
+                            row.appendChild(cell4);
+                        
+                        }
+
+                        tblBody.appendChild(row);
+
+                    }
+
+            tbl.appendChild(tblBody);
+            document.body.appendChild(tbl);
+            tbl.setAttribute("border", "2");
+        }
+    </script>
+</body>
+</html>
